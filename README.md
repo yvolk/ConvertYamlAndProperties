@@ -7,6 +7,8 @@
 ![show.gif](images/show.gif)
 
 ## Change Log
+>1.0.6  Correctly convert to Properties the simplest case of Sequence of Mappings with exactly one mapping pair per sequence entry.
+
 >1.0.4  fix bugs.
 
 >1.0.3  fix YAML file null value exception.
