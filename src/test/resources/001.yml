@@ -6,3 +6,6 @@ keyThree:
       - keyFour: valueFour
       - keyFive: valueFive
       - keySix: valueSix
+keySeven.keyEight:
+  - keyNine:valueNine
+  - keyTen:valueTen

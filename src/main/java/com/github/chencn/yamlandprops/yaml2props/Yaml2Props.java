@@ -40,16 +40,12 @@ public class Yaml2Props {
             for (final String mapKey : map.keySet()) {
                 Object mapValue = map.get(mapKey);
                 String childKey = key + "." + mapKey;
-                if (mapValue instanceof Map) {
-                    toString(sb, childKey, mapValue);
-                } else if (mapValue instanceof List) {
-                    List<Object> listValue = (List<Object>) mapValue;
-                    for (int i = 0; i < listValue.size(); i++) {
-                        listValueToString(sb, childKey + ".[" + i + "]", listValue.get(i));
-                    }
-                } else {
-                    sb.append(String.format("%s=%s%n", childKey, mapValue));
-                }
+                toString(sb, childKey, mapValue);
+            }
+        } else if (o instanceof List) {
+            List<Object> listValue = (List<Object>) o;
+            for (int i = 0; i < listValue.size(); i++) {
+                listValueToString(sb, key + ".[" + i + "]", listValue.get(i));
             }
         } else {
             sb.append(String.format("%s=%s%n", key, o));
