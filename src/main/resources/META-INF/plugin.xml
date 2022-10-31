@@ -1,11 +1,20 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.chencn.yamlandprops</id>
-    <name>Convert YAML and Properties File</name>
-    <version>1.0.6</version>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.github.chencn.yamlandprops.ConvertYamlAndProperties</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Convert YAML and Properties File - Yvolk Fork</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor email="chenxuq@live.com" url="https://github.com/chencn/ConvertYamlAndProperties">xqchen</vendor>
 
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-     <h1>Convert YAML and Properties File</h1>
+    <h1>Convert YAML and Properties File</h1>
      <p>
         <b>
             <a href="https://github.com/chencn/ConvertYamlAndProperties">Github</a>  |  <a href="https://gitee.com/xqchen/ConvertYamlAndProperties">Gitee</a>
@@ -13,26 +22,25 @@
     </p>
      <p><b>You can quickly convert <em>Properties</em> files to <em>YAML</em> files, or <em>YAML</em> files to <em>Properties</em> files</b></p>
       <div><img src="https://plugins.jetbrains.com/files/13804/screenshot_21167.png" alt="Convert YAML and Properties File" ></div>
-    ]]></description>
+  ]]></description>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="173"/>
-    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
+
     </extensions>
 
     <actions>
-        <!-- Add your actions here -->
         <action id="com.github.chencn.yamlandprops" class="com.github.chencn.yamlandprops.ConvertAction"
                 text="Convert YAML and Properties File"
                 description="You can quickly convert Properties files to YAML files, or YAML files to Properties files">
-            <!--在ide左边编辑栏菜单文件右击中显示-->
+            <!--Displayed in the right-click on the file in the edit bar menu on the left side of the IDE-->
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-            <!--在ide右边项目打开的文件中右击显示-->
+            <!--Right-click in the file opened by the project on the right side of the IDE to display-->
             <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
         </action>
     </actions>
